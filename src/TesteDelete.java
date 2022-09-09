@@ -2,12 +2,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class testeInsert {
+public class TesteDelete {
     public static void main(String[] args) throws SQLException {
-        Contato contato = new Contato("Leonardo", 18, "cabelinho@netuno.com", "88888-8888");
+        Integer id = 1;
 
-        String sql = "insert into contato(nome, idade, email, telefone)" +
-                "values ('"+ contato.getNome() + "', " + contato.getIdade() + ", '" + contato.getEmail() + "', '" + contato.getTelefone() + "')";
+        String sql = "delete from contato where id = " + id;
+
         Conexao conexao = new Conexao();
 
         Connection connection = conexao.conectaBD();
