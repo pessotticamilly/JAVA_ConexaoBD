@@ -23,7 +23,7 @@ public class TesteSelect {
             resultSet.getInt("idade"),
             resultSet.getString("email"),
             resultSet.getString("telefone"));
-            
+
             System.out.print(contato);
         }
 
