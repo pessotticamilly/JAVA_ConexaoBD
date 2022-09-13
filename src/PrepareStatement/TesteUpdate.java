@@ -1,12 +1,14 @@
+package PrepareStatement;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TesteDelete {
+public class TesteUpdate {
     public static void main(String[] args) throws SQLException {
-        Integer id = 1;
+        Contato contato = new Contato(2, "Leozin", 18,  "cabelinho@netuno.com", "88888-8888");
 
-        String sql = "delete from contato where id = " + id;
+        String sql = "update contato set nome = '" + contato.getNome() + "', idade = " + contato.getIdade() + ", email = '" + contato.getEmail() + "', telefone  = '" + contato.getTelefone() + "' where id = " + contato.getId();
 
         Conexao conexao = new Conexao();
 
