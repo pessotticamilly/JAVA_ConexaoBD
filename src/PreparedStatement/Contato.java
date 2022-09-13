@@ -1,4 +1,4 @@
-package PrepareStatement;
+package PreparedStatement;
 
 import java.util.Objects;
 

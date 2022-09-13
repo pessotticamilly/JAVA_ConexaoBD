@@ -1,24 +1,24 @@
-package PrepareStatement;
+package PreparedStatement;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class TesteSelect {
     public static void main(String[] args) throws SQLException {
-        select("2");
+        select(2);
     }
 
     public static Contato select(Object id) throws SQLException {
-        String sql = "select * from contato where id = " + id;
+        String sql = "select * from contato where id =  ?";
 
         Conexao conexao = new Conexao();
 
         Connection connection = conexao.conectaBD();
 
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(sql);
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, (Integer) id);
+
+        ResultSet resultSet = statement.executeQuery();
 
         Contato contato;
 
